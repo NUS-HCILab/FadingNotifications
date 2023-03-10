@@ -1,4 +1,4 @@
-# FadingNotification
+# FadingNotifications
 Implementation of fade-in notifications (a clone of private repos [TriggerNotificationPython](https://github.com/NUS-HCILab/TriggerNotificationPython) and [NIPGlass](https://github.com/NUS-HCILab/NIPGlass))
 
 ## Publications
@@ -23,7 +23,7 @@ Implementation of fade-in notifications (a clone of private repos [TriggerNotifi
 ```
 
 ## Contact person
-- [Nuwan Janaka](https://www.nus-hci.org/team/nuwan-janaka/) ([In](https://www.linkedin.com/in/nuwan-janaka/)
+- [Nuwan Janaka](https://www.nus-hci.org/team/nuwan-janaka/) ([In](https://www.linkedin.com/in/nuwan-janaka/))
 
 
 ## Contents
