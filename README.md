@@ -2,9 +2,9 @@
 Implementation of fade-in notifications (a clone of private repos [TriggerNotificationPython](https://github.com/NUS-HCILab/TriggerNotificationPython) and [NIPGlass](https://github.com/NUS-HCILab/NIPGlass))
 
 ## Publications
-- [NotiFade: Minimizing OHMD Notification Distractions Using Fading](https://doi.org/10.1145/3544548.3580891), CHI EA'23 [**[PDF]**](CHI2023_EA_fade_notification.pdf) (camera ready)
+- [NotiFade: Minimizing OHMD Notification Distractions Using Fading](https://doi.org/10.1145/3544549.3585784), CHI EA'23 [**[PDF]**](CHI2023_EA_fade_notification.pdf) (camera ready)
 ```
-@article{janaka_notifade_2023,
+@inproceedings{janaka_notifade_2023,
 	title = {NotiFade: Minimizing OHMD Notification Distractions Using Fading},
 	language = {en},
 	author = {Janaka, Nuwan and Zhao, Shengdong and Chan, Samantha},
