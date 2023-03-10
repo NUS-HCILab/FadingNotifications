@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cueLayoutWidth">580sp</dimen> <!-- was 560sp -->
+    <dimen name="notificationLayoutWidth">580sp</dimen> <!-- was 560sp -->
+
+    <dimen name="appNameSize1">14sp</dimen>
+    <dimen name="appIconSize1">16sp</dimen>
+    <dimen name="titleSize1">24sp</dimen>
+    <dimen name="messageSize1">20sp</dimen>
+    <dimen name="largeIconSize1">48sp</dimen>
+
+    <dimen name="notificationMarginTop">0sp</dimen>
+    <dimen name="notificationMarginStart">8sp</dimen>
+    <dimen name="notificationMarginEnd">8sp</dimen>
+    <dimen name="appNameSize">24sp</dimen>
+    <dimen name="appIconSize">26sp</dimen>
+    <dimen name="appNameMarginStart">8sp</dimen>
+    <dimen name="titleSize">36sp</dimen>
+    <dimen name="messageSize">20sp</dimen> <!-- was 30sp -->
+    <dimen name="largeIconSize">60sp</dimen>
+    <integer name="minimumEms">20</integer>
+
+    <dimen name="mainMarginTop">95sp</dimen> <!-- was 120sp -->
+    <dimen name="mainMarginStart">30sp</dimen>
+    <dimen name="mainMarginEnd">30sp</dimen>
+    <dimen name="headingSize">36sp</dimen>
+    <dimen name="subHeadingSize">36sp</dimen>
+    <dimen name="subScrollHeadingHeight">437sp</dimen> <!-- was wrap_content -->
+    <dimen name="subHeadingHeight">2190sp</dimen> <!-- was wrap_content -->
+    <dimen name="contentSize">24sp</dimen>
+
+    <dimen name="mcqMarginStart">175sp</dimen>
+    <dimen name="mcqMarginEnd">30sp</dimen>
+    <dimen name="mcqQuestionSize">34sp</dimen>
+    <dimen name="mcqChoiceSize">30sp</dimen>
+</resources>

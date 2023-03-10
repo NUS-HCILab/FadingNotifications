@@ -1,6 +1,36 @@
 # Add specific files/folders related to your project
 
 
+FadeNotifPython/_sequence*
+FadeNotifPython/data*
+FadeNotifPython/video*
+FadeNotifPython/data-*
+FadeNotifPython/**/*_lastrun.py
+FadeNotifPython/__pycache__
+
+
+FadeNotifAndroid/*.iml
+FadeNotifAndroid/.gradle
+FadeNotifAndroid/local.properties
+FadeNotifAndroid/.idea
+FadeNotifAndroid/.DS_Store
+FadeNotifAndroid/build
+FadeNotifAndroid/captures
+FadeNotifAndroid/.externalNativeBuild
+FadeNotifAndroid/test-results
+FadeNotifAndroid/.project
+FadeNotifAndroid/.classpath
+FadeNotifAndroid/.settings
+FadeNotifAndroid/proguard/
+FadeNotifAndroid/*.log
+FadeNotifAndroid/captures/
+FadeNotifAndroid/lint
+
+FadeNotifAndroid/app/src/main/res/raw/credential.json
+
+
+
+.idea/*
 
 
 # System Files

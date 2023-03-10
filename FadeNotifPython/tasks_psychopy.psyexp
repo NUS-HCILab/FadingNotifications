@@ -1,0 +1,395 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment version="2020.2.10" encoding="utf-8">
+  <Settings>
+    <Param name="Audio latency priority" val="use prefs" valType="str" updates="None"/>
+    <Param name="Audio lib" val="use prefs" valType="str" updates="None"/>
+    <Param name="Completed URL" val="" valType="str" updates="None"/>
+    <Param name="Data file delimiter" val="auto" valType="str" updates="None"/>
+    <Param name="Data filename" val="u'data/%s/%s_%s_%s_%s' % (expInfo['participant'], expInfo['participant'], expInfo['session'], expName, expInfo['date'])" valType="code" updates="None"/>
+    <Param name="Enable Escape" val="True" valType="bool" updates="None"/>
+    <Param name="Experiment info" val="{'participant': '', 'session': ''}" valType="code" updates="None"/>
+    <Param name="Force stereo" val="True" valType="bool" updates="None"/>
+    <Param name="Full-screen window" val="True" valType="bool" updates="None"/>
+    <Param name="HTML path" val="" valType="str" updates="None"/>
+    <Param name="Incomplete URL" val="" valType="str" updates="None"/>
+    <Param name="Monitor" val="testMonitor" valType="str" updates="None"/>
+    <Param name="Resources" val="[]" valType="fileList" updates="None"/>
+    <Param name="Save csv file" val="False" valType="bool" updates="None"/>
+    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
+    <Param name="Save hdf5 file" val="False" valType="bool" updates="None"/>
+    <Param name="Save log file" val="True" valType="bool" updates="None"/>
+    <Param name="Save psydat file" val="True" valType="bool" updates="None"/>
+    <Param name="Save wide csv file" val="True" valType="bool" updates="None"/>
+    <Param name="Screen" val="2" valType="num" updates="None"/>
+    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
+    <Param name="Show mouse" val="True" valType="bool" updates="None"/>
+    <Param name="Units" val="height" valType="str" updates="None"/>
+    <Param name="Use version" val="" valType="str" updates="None"/>
+    <Param name="Window size (pixels)" val="[4480, 1440]" valType="code" updates="None"/>
+    <Param name="blendMode" val="avg" valType="str" updates="None"/>
+    <Param name="color" val="$[-1,-1,-1]" valType="str" updates="None"/>
+    <Param name="colorSpace" val="rgb" valType="str" updates="None"/>
+    <Param name="elAddress" val="100.1.1.1" valType="str" updates="None"/>
+    <Param name="elDataFiltering" val="FILTER_LEVEL_2" valType="str" updates="None"/>
+    <Param name="elLiveFiltering" val="FILTER_LEVEL_OFF" valType="str" updates="None"/>
+    <Param name="elModel" val="EYELINK 1000 DESKTOP" valType="str" updates="None"/>
+    <Param name="elPupilAlgorithm" val="ELLIPSE_FIT" valType="str" updates="None"/>
+    <Param name="elPupilMeasure" val="PUPIL_AREA" valType="str" updates="None"/>
+    <Param name="elSampleRate" val="1000" valType="num" updates="None"/>
+    <Param name="elSimMode" val="False" valType="bool" updates="None"/>
+    <Param name="elTrackEyes" val="RIGHT_EYE" valType="str" updates="None"/>
+    <Param name="elTrackingMode" val="PUPIL_CR_TRACKING" valType="str" updates="None"/>
+    <Param name="expName" val="tasks_psychopy" valType="str" updates="None"/>
+    <Param name="exportHTML" val="on Sync" valType="str" updates="None"/>
+    <Param name="eyetracker" val="None" valType="str" updates="None"/>
+    <Param name="gpAddress" val="127.0.0.1" valType="str" updates="None"/>
+    <Param name="gpPort" val="4242" valType="num" updates="None"/>
+    <Param name="logging level" val="exp" valType="code" updates="None"/>
+    <Param name="mgBlink" val="MIDDLE_BUTTON" valType="list" updates="None"/>
+    <Param name="mgMove" val="CONTINUOUS" valType="str" updates="None"/>
+    <Param name="mgSaccade" val="0.5" valType="num" updates="None"/>
+    <Param name="tbLicenseFile" val="" valType="str" updates="None"/>
+    <Param name="tbModel" val="" valType="str" updates="None"/>
+    <Param name="tbSampleRate" val="60" valType="num" updates="None"/>
+    <Param name="tbSerialNo" val="" valType="str" updates="None"/>
+  </Settings>
+  <Routines>
+    <Routine name="start">
+      <CodeComponent name="code_start">
+        <Param name="Before Experiment" val="import participant_config&amp;#10;import  trigger_notification&amp;#10;import stimuli_generation&amp;#10;import reading_passages&amp;#10;import  device_driver&amp;#10;import  log_utility&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Before JS Experiment" val="import * as participant_config from 'participant_config';&amp;#10;import * as trigger_notification from 'trigger_notification';&amp;#10;import * as stimuli_generation from 'stimuli_generation';&amp;#10;import * as reading_passages from 'reading_passages';&amp;#10;import * as device_driver from 'device_driver';&amp;#10;import * as log_utility from 'log_utility';&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" val="# decide based on participant, session&amp;#10;task_type = participant_config.get_task_type(expInfo['participant'], expInfo['session'])&amp;#10;task_location = participant_config.get_task_location(expInfo['participant'], expInfo['session'])&amp;#10;task_mobility = participant_config.get_task_mobility(expInfo['participant'], expInfo['session'])&amp;#10;task_duration = participant_config.get_task_duration(expInfo['participant'], expInfo['session'])&amp;#10;notification_type = participant_config.get_notification_type(expInfo['participant'], expInfo['session'])&amp;#10;is_training_session = int(expInfo['session']) &lt; 0&amp;#10;&amp;#10;# get the notification list (to trigger  later)&amp;#10;notification_list = trigger_notification.get_notification_list(expInfo['participant'], expInfo['session'])&amp;#10;&amp;#10;# log info&amp;#10;log_utility.log_participant_info(expInfo['participant'], expInfo['session'], task_type, task_location, task_mobility,notification_type)&amp;#10;&amp;#10;# clear display&amp;#10;device_driver.clear_reading_passage()&amp;#10;device_driver.clear_notification_data()&amp;#10;&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Experiment" val="task_type = participant_config.get_task_type(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;task_location = participant_config.get_task_location(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;task_mobility = participant_config.get_task_mobility(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;task_duration = participant_config.get_task_duration(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;notification_type = participant_config.get_notification_type(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;is_training_session = (Number.parseInt(expInfo[&quot;session&quot;]) &lt; 0);&amp;#10;notification_list = trigger_notification.get_notification_list(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;]);&amp;#10;log_utility.log_participant_info(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;], task_type, task_location, task_mobility, notification_type);&amp;#10;device_driver.clear_reading_passage();&amp;#10;device_driver.clear_notification_data();&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Routine" val="trigger_notification.trigger_notification_randomly_threaded(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;], notification_list, globalClock);&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Routine" val="# start triggering notifications&amp;#10;trigger_notification.trigger_notification_randomly_threaded(expInfo['participant'], expInfo['session'], notification_list, globalClock)&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Code Type" val="Auto-&gt;JS" valType="str" updates="None"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each JS Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Routine" val="log_utility.log_timing_threaded(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;], (- 1), globalClock.getTime(), win.getFutureFlipTime({&quot;clock&quot;: null}));&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="log_utility.log_timing_threaded(expInfo['participant'], expInfo['session'], -1, globalClock.getTime(), win.getFutureFlipTime(clock=None))" valType="extendedCode" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="name" val="code_start" valType="code" updates="None"/>
+      </CodeComponent>
+      <TextComponent name="txt_start">
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="contrast" val="1" valType="num" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="languageStyle" val="LTR" valType="str" updates="None"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="name" val="txt_start" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="2" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="text" val="Starting ..." valType="extendedStr" updates="constant"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="end">
+      <TextComponent name="txt_end">
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="contrast" val="1" valType="num" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="languageStyle" val="LTR" valType="str" updates="None"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+        <Param name="name" val="txt_end" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="1" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="text" val="Stopping ..." valType="extendedStr" updates="constant"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="task_vigilance">
+      <CodeComponent name="code_v">
+        <Param name="Before Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Before JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" val="trials_vigilance = 0&amp;#10;&amp;#10;if task_type == 'vigilance':&amp;#10;   # enable trials&amp;#10;   trials_vigilance = 1&amp;#10;   &amp;#10;   # generate new stimuli&amp;#10;   stimuli_generation.generate_vigilance_stimuli_csv('stimuli/vigilance_stimuli.csv', task_duration)&amp;#10;&amp;#10;&amp;#10;# keep track of timing&amp;#10;timing_info = ''&amp;#10;&amp;#10;# stimuli mapping&amp;#10;image_mapping = {'1': 'img/76x76.png',  '2':'img/100x100.png',  '3':'img/100x76.png', '4':'img/76x100.png'}&amp;#10;&amp;#10;if task_location == 'desktop':&amp;#10;    # do nothing&amp;#10;    pass&amp;#10;&amp;#10;if task_location == 'glass':&amp;#10;    # reset the stimuli mapping&amp;#10;   pass&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Experiment" val="trials_vigilance = 0;&amp;#10;if ((task_type === &quot;vigilance&quot;)) {&amp;#10;    trials_vigilance = 1;&amp;#10;    stimuli_generation.generate_vigilance_stimuli_csv(&quot;stimuli/vigilance_stimuli.csv&quot;, task_duration);&amp;#10;}&amp;#10;timing_info = &quot;&quot;;&amp;#10;image_mapping = {&quot;1&quot;: &quot;img/76x76.png&quot;, &quot;2&quot;: &quot;img/100x100.png&quot;, &quot;3&quot;: &quot;img/100x76.png&quot;, &quot;4&quot;: &quot;img/76x100.png&quot;};&amp;#10;if ((task_location === &quot;desktop&quot;)) {&amp;#10;}&amp;#10;if ((task_location === &quot;glass&quot;)) {&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Routine" val="timing_info = (timing_info + &quot;{},{},{}\n&quot;.format(trials_v.thisRepN, globalClock.getTime(), win.getFutureFlipTime({&quot;clock&quot;: null})));&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Routine" val="timing_info = timing_info + '{},{},{}\n'.format(trials_v.thisRepN, globalClock.getTime(),  win.getFutureFlipTime(clock=None))" valType="extendedCode" updates="constant"/>
+        <Param name="Code Type" val="Auto-&gt;JS" valType="str" updates="None"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each JS Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="# log timing&amp;#10;log_utility.log_all_timing(expInfo['participant'], expInfo['session'], timing_info)" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Experiment" val="log_utility.log_all_timing(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;], timing_info);&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="name" val="code_v" valType="code" updates="None"/>
+      </CodeComponent>
+      <MouseComponent name="mouse_v">
+        <Param name="clickable" val="" valType="code" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutineOnPress" val="never" valType="str" updates="constant"/>
+        <Param name="name" val="mouse_v" valType="code" updates="None"/>
+        <Param name="newClicksOnly" val="True" valType="bool" updates="constant"/>
+        <Param name="saveMouseState" val="on click" valType="str" updates="None"/>
+        <Param name="saveParamsClickable" val="name," valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val=".625" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="timeRelativeTo" val="experiment" valType="str" updates="constant"/>
+      </MouseComponent>
+      <ImageComponent name="im_v">
+        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="contrast" val="1" valType="num" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
+        <Param name="image" val="$image_mapping[str($image_id)]" valType="str" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="mask" val="None" valType="str" updates="constant"/>
+        <Param name="name" val="im_v" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="size" val="(3, 3)" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="0.625" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
+        <Param name="units" val="cm" valType="str" updates="None"/>
+      </ImageComponent>
+      <ImageComponent name="im_line">
+        <Param name="color" val="$[1,1,1]" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
+        <Param name="image" val="img/white_line.png" valType="str" updates="constant"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="mask" val="None" valType="str" updates="constant"/>
+        <Param name="name" val="im_line" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0.35)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="size" val="(2, 0.005)" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="0.625" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="texture resolution" val="128" valType="code" updates="constant"/>
+        <Param name="units" val="norm" valType="str" updates="None"/>
+      </ImageComponent>
+    </Routine>
+    <Routine name="task_reading">
+      <CodeComponent name="code">
+        <Param name="Before Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Before JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" val="reading_text = ''&amp;#10;&amp;#10;trials_reading = 0&amp;#10;&amp;#10;if task_type == 'reading':&amp;#10;    # enable trials&amp;#10;    trials_reading = 1&amp;#10;    &amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Experiment" val="reading_text = &quot;&quot;;&amp;#10;trials_reading = 0;&amp;#10;if ((task_type === &quot;reading&quot;)) {&amp;#10;    trials_reading = 1;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Routine" val="passage = reading_passages.get_reading_passages(task_duration, is_training_session, expInfo[&quot;participant&quot;]);&amp;#10;log_utility.log_passage_info(expInfo[&quot;participant&quot;], expInfo[&quot;session&quot;], passage);&amp;#10;reading_start_time = globalClock.getTime();&amp;#10;if ((task_location === &quot;desktop&quot;)) {&amp;#10;    reading_text = passage[&quot;text&quot;];&amp;#10;}&amp;#10;if ((task_location === &quot;glass&quot;)) {&amp;#10;    text_r.fillColor = null;&amp;#10;    device_driver.send_reading_passage(passage[&quot;text&quot;]);&amp;#10;    device_driver.enable_scrolling_listening();&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Routine" val="# generate new text&amp;#10;passage  = reading_passages.get_reading_passages(task_duration, is_training_session, expInfo['participant'])&amp;#10;&amp;#10;# log info&amp;#10;log_utility.log_passage_info(expInfo['participant'], expInfo['session'], passage)&amp;#10;&amp;#10;# track time&amp;#10;reading_start_time = globalClock.getTime()&amp;#10;&amp;#10;if task_location == 'desktop':&amp;#10;    # set text&amp;#10;    reading_text =  passage[&quot;text&quot;]&amp;#10;&amp;#10;if task_location == 'glass':&amp;#10;    #clear the box&amp;#10;    text_r.fillColor = None&amp;#10;    # send text to glass&amp;#10;    device_driver.send_reading_passage(passage[&quot;text&quot;])&amp;#10;    # enable scolling&amp;#10;    device_driver.enable_scrolling_listening()" valType="extendedCode" updates="constant"/>
+        <Param name="Code Type" val="Auto-&gt;JS" valType="str" updates="None"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each JS Frame" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Routine" val="if ((task_location === &quot;glass&quot;)) {&amp;#10;    device_driver.clear_reading_passage();&amp;#10;    device_driver.disable_scrolling_listening();&amp;#10;}&amp;#10;reading_text = &quot;&quot;;&amp;#10;reading_end_time = globalClock.getTime();&amp;#10;console.log(&quot;Reading time&quot;, (reading_end_time - reading_start_time));&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="if task_location == 'glass':&amp;#10;    # clear text&amp;#10;    device_driver.clear_reading_passage()&amp;#10;    # disable scolling&amp;#10;    device_driver.disable_scrolling_listening()&amp;#10;&amp;#10;reading_text = &quot;&quot;&amp;#10;&amp;#10;# track time&amp;#10;reading_end_time = globalClock.getTime()&amp;#10;print('Reading time', reading_end_time - reading_start_time)" valType="extendedCode" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="name" val="code" valType="code" updates="None"/>
+      </CodeComponent>
+      <TextboxComponent name="text_r">
+        <Param name="anchor" val="center" valType="str" updates="constant"/>
+        <Param name="autoLog" val="True" valType="bool" updates="constant"/>
+        <Param name="bold" val="False" valType="bool" updates="constant"/>
+        <Param name="borderColor" val="None" valType="str" updates="constant"/>
+        <Param name="borderWidth" val="1" valType="num" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="editable" val="False" valType="bool" updates="constant"/>
+        <Param name="fillColor" val="black" valType="str" updates="constant"/>
+        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="italic" val="False" valType="bool" updates="constant"/>
+        <Param name="languageStyle" val="LTR" valType="str" updates="None"/>
+        <Param name="letterHeight" val="0.024" valType="code" updates="constant"/>
+        <Param name="lineSpacing" val="1.0" valType="num" updates="constant"/>
+        <Param name="name" val="text_r" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="padding" val="0.03" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="size" val="[1.25,None]" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="text" val="$reading_text" valType="extendedStr" updates="set every repeat"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+      </TextboxComponent>
+      <KeyboardComponent name="key_resp">
+        <Param name="allowedKeys" val="'space'" valType="code" updates="constant"/>
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="name" val="key_resp" valType="code" updates="None"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="store" val="all keys" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="constant"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="task_recognition">
+      <CodeComponent name="check_finish">
+        <Param name="Before Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Before JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Begin JS Routine" val="continueButton = new visual.ButtonStim(win, {&quot;labelText&quot;: &quot;Continue&quot;, &quot;pos&quot;: [0.35, (- 0.45)]});&amp;#10;trigger_notification.cancel_notification_trigger();&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Begin Routine" val="# only allow to continue after fillign all questions&amp;#10;continueButton = visual.ButtonStim(win, labelText= &quot;Continue&quot;, pos=(.35, -.45))&amp;#10;&amp;#10;# cancel notification triggering&amp;#10;trigger_notification.cancel_notification_trigger()&amp;#10;&amp;#10;&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Code Type" val="Auto-&gt;JS" valType="str" updates="None"/>
+        <Param name="Each Frame" val="continueButton.draw()&amp;#10;&amp;#10;if form_recog.complete:&amp;#10;    continueButton.buttonEnabled = True&amp;#10;    &amp;#10;if continueButton.buttonSelected:&amp;#10;    continueRoutine = False" valType="extendedCode" updates="constant"/>
+        <Param name="Each JS Frame" val="continueButton.draw();&amp;#10;if (form_recog.complete) {&amp;#10;    continueButton.buttonEnabled = true;&amp;#10;}&amp;#10;if (continueButton.buttonSelected) {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End JS Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="name" val="check_finish" valType="code" updates="None"/>
+      </CodeComponent>
+      <TextboxComponent name="form_instr">
+        <Param name="anchor" val="top-center" valType="str" updates="constant"/>
+        <Param name="autoLog" val="True" valType="bool" updates="constant"/>
+        <Param name="bold" val="False" valType="bool" updates="constant"/>
+        <Param name="borderColor" val="None" valType="str" updates="constant"/>
+        <Param name="borderWidth" val="2" valType="num" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="editable" val="False" valType="bool" updates="constant"/>
+        <Param name="fillColor" val="None" valType="str" updates="constant"/>
+        <Param name="flipHoriz" val="False" valType="bool" updates="constant"/>
+        <Param name="flipVert" val="False" valType="bool" updates="constant"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="italic" val="False" valType="bool" updates="constant"/>
+        <Param name="languageStyle" val="LTR" valType="str" updates="None"/>
+        <Param name="letterHeight" val="0.025" valType="code" updates="constant"/>
+        <Param name="lineSpacing" val="1.0" valType="num" updates="constant"/>
+        <Param name="name" val="form_instr" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="padding" val="None" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0.5)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="size" val="" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+        <Param name="text" val="Have you seen the following notifications?&amp;#10;Check the whole sentence as some sentence may have altered the original notification." valType="extendedStr" updates="constant"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+      </TextboxComponent>
+      <FormComponent name="form_recog">
+        <Param name="Data Format" val="rows" valType="str" updates="constant"/>
+        <Param name="Item Padding" val="0.05" valType="code" updates="constant"/>
+        <Param name="Items" val="stimuli/recognition_stimuli.csv" valType="str" updates="constant"/>
+        <Param name="Randomize" val="True" valType="bool" updates="constant"/>
+        <Param name="Style" val="['dark']" valType="fixedList" updates="constant"/>
+        <Param name="Text Height" val="0.03" valType="code" updates="constant"/>
+        <Param name="disabled" val="False" valType="bool" updates="None"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="name" val="form_recog" valType="code" updates="None"/>
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="pos" val="(0, 0)" valType="code" updates="constant"/>
+        <Param name="saveStartStop" val="True" valType="bool" updates="None"/>
+        <Param name="size" val="(1, 0.75)" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="syncScreenRefresh" val="True" valType="bool" updates="None"/>
+      </FormComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="start"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_v">
+      <Param name="Selected rows" val="" valType="str" updates="None"/>
+      <Param name="conditions" val="[OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 1), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 2), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 3), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 4), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 5), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 6), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 7), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 8), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 9), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 10), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 11), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 12), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 13), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 14), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 15), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 16), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 17), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 18), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 19), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 20), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 21), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 22), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 23), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 24), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 25), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 26), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 27), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 28), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 29), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 30), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 31), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 32), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 33), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 34), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 35), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 36), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 37), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 38), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 39), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 40), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 41), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 42), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 43), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 44), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 45), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 46), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 47), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 48), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 49), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 50), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 51), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 52), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 53), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 54), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 55), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 56), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 57), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 58), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 59), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 60), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 61), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 62), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 63), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 64), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 65), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 66), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 67), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 68), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 69), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 70), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 71), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 72), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 73), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 74), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 75), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 76), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 77), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 78), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 79), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 80), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 81), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 82), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 83), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 84), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 85), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 86), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 87), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 88), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 89), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 90), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 91), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 92), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 93), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 94), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 95), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 96), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 97), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 98), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 99), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 100), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 101), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 102), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 103), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 104), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 105), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 106), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 107), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 108), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 109), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 110), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 111), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 112), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 113), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 114), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 115), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 116), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 117), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 118), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 119), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 120), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 121), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 122), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 123), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 124), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 125), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 126), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 127), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 128), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 129), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 130), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 131), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 132), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 133), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 134), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 135), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 136), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 137), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 138), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 139), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 140), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 141), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 142), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 143), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 144), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 145), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 146), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 147), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 148), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 149), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 150), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 151), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 152), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 153), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 154), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 155), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 156), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 157), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 158), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 159), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 160), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 161), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 162), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 163), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 164), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 165), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 166), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 167), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 168), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 169), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 170), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 171), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 172), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 173), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 174), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 175), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 176), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 177), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 178), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 179), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 180), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 181), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 182), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 183), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 184), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 185), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 186), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 187), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 188), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 189), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 190), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 191), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 192), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 193), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 194), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 195), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 196), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 197), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 198), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 199), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 200), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 201), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 202), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 203), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 204), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 205), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 206), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 207), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 208), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 209), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 210), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 211), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 212), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 213), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 214), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 215), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 216), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 217), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 218), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 219), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 220), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 221), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 222), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 223), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 224), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 225), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 226), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 227), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 228), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 229), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 230), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 231), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 232), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 233), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 234), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 235), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 236), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 237), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 238), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 239), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 240), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 241), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 242), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 243), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 244), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 245), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 246), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 247), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 248), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 249), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 250), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 251), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 252), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 253), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 254), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 255), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 256), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 257), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 258), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 259), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 260), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 261), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 262), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 263), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 264), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 265), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 266), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 267), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 268), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 269), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 270), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 271), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 272), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 273), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 274), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 275), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 276), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 277), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 278), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 279), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 280), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 281), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 282), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 283), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 284), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 285), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 286), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 287), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 288), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 289), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 290), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 291), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 292), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 293), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 294), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 295), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 296), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 297), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 298), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 299), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 300), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 301), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 302), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 303), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 304), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 305), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 306), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 307), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 308), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 309), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 310), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 311), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 312), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 313), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i1'), ('stimuli_id', 314), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 315), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 316), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 317), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 318), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 319), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 320), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 321), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 322), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 323), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 324), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 325), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 326), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 327), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 328), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 329), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 330), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i6'), ('stimuli_id', 331), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 332), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 333), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 334), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 335), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i4'), ('stimuli_id', 336), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 337), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 338), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 339), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 340), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 341), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 342), ('image_id', 3)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 343), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 344), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i2'), ('stimuli_id', 345), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 346), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 347), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 348), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 349), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 350), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 351), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 352), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 353), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 354), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i5'), ('stimuli_id', 355), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 356), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 357), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 358), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 359), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 360), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 361), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 362), ('image_id', 4)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 363), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i3'), ('stimuli_id', 364), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 365), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 366), ('image_id', 2)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 367), ('image_id', 1)]), OrderedDict([('stimuli_type', 'i9'), ('stimuli_id', 368), ('image_id', 2)])]" valType="str" updates="None"/>
+      <Param name="conditionsFile" val="stimuli/vigilance_stimuli.csv" valType="str" updates="None"/>
+      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
+      <Param name="isTrials" val="True" valType="bool" updates="None"/>
+      <Param name="loopType" val="sequential" valType="str" updates="None"/>
+      <Param name="nReps" val="$trials_vigilance" valType="code" updates="None"/>
+      <Param name="name" val="trials_v" valType="code" updates="None"/>
+      <Param name="random seed" val="" valType="code" updates="None"/>
+    </LoopInitiator>
+    <Routine name="task_vigilance"/>
+    <LoopTerminator name="trials_v"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_r">
+      <Param name="Selected rows" val="" valType="str" updates="None"/>
+      <Param name="conditions" val="None" valType="str" updates="None"/>
+      <Param name="conditionsFile" val="" valType="str" updates="None"/>
+      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
+      <Param name="isTrials" val="True" valType="bool" updates="None"/>
+      <Param name="loopType" val="sequential" valType="str" updates="None"/>
+      <Param name="nReps" val="$trials_reading" valType="code" updates="None"/>
+      <Param name="name" val="trials_r" valType="code" updates="None"/>
+      <Param name="random seed" val="" valType="code" updates="None"/>
+    </LoopInitiator>
+    <Routine name="task_reading"/>
+    <LoopTerminator name="trials_r"/>
+    <Routine name="task_recognition"/>
+    <Routine name="end"/>
+  </Flow>
+</PsychoPy2experiment>
