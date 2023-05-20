@@ -6,20 +6,20 @@ Implementation of fade-in notifications (a clone of private repos [TriggerNotifi
 - [Poster](CHIEA23_poster.pdf)
 ```
 @inproceedings{janaka_notifade_2023,
-	title = {NotiFade: Minimizing OHMD Notification Distractions Using Fading},
-	language = {en},
-	author = {Janaka, Nuwan and Zhao, Shengdong and Chan, Samantha},
-	year = {2023},
-	isbn = {978-1-4503-9422-2},	
-	url = {https://doi.org/10.1145/3544549.3585784},
+	address = {New York, NY, USA},
+	series = {{CHI} {EA} '23},
+	title = {{NotiFade}: {Minimizing} {OHMD} {Notification} {Distractions} {Using} {Fading}},
+	isbn = {978-1-4503-9422-2},
+	shorttitle = {{NotiFade}},
+	url = {https://dl.acm.org/doi/10.1145/3544549.3585784},
 	doi = {10.1145/3544549.3585784},
 	booktitle = {Extended {Abstracts} of the 2023 {CHI} {Conference} on {Human} {Factors} in {Computing} {Systems}},
 	publisher = {Association for Computing Machinery},
-	address = {New York, NY, USA},
-	numpages = {9},
-	keywords = {notification, smart glasses, OHMD, OST HMD, fading, interruption, distraction, animation, fade, scroll},
-	location = {Hamburg, Germany},
-	series = {{CHI} {EA} '23},
+	author = {Janaka, Nuwan and Zhao, Shengdong and Chan, Samantha},
+	month = apr,
+	year = {2023},
+	keywords = {OHMD, OST HMD, animation, distraction, fade, fading, interruption, notification, scroll, smart glasses},
+	pages = {1--9},
 }
 ```
 
